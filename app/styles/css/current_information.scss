@@ -1,0 +1,102 @@
+@mixin fontStyle ($color, $size, $lineHeight) {
+    color: $color;
+    font-size: $size;
+    line-height: $lineHeight;
+ }
+
+ .current_information_wrapper{
+    background-color: #ececec;
+   
+}
+.current_information{
+    display: flex;
+    justify-content: space-between; 
+    max-width: 960px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 100px 0 100px;
+    div{
+        height: 200px;
+        overflow: hidden;
+       
+    }
+    
+    div+div{
+    margin-left: 65px;
+    }
+    p{
+        @include fontStyle( #787878, 16px, 24px);   
+        font-family: 'open_sanslight';   
+        text-shadow: 0.5px 0.5px 1px #1f1e1e;
+        height: 280px;
+    
+    }
+    h4{
+        @include fontStyle( #454545, 30px, 30px);
+        padding-bottom: 20px;   
+        
+    }
+small{
+    @include fontStyle( #c5c5c5, 16px, 24px);   
+    font-family: Georgia; 
+    font-style: italic;
+}
+.current_logo{
+    height: 48px;
+    @include fontStyle( #787878, 48px, 48px);  
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+ h3{
+     padding: 0px;
+     text-transform: uppercase;
+    
+ }
+ .er{
+     color: #b9b9b9;
+ }
+ }
+}
+.change{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .current_information{
+        h4{
+            @include fontStyle( #454545, 24px, 24px);
+        }
+    }
+    .first_block{
+        display: none;
+    }
+    .change{
+        display: block;
+    }
+    
+}
+@media (max-width: 480px){
+    .current_information{
+        flex-direction: column;
+        height: 670px;
+        padding: 80px 20px 90px 30px;
+     
+    div+div{
+        margin-left: 0px;
+        } 
+        h4{    
+            padding-bottom: 24px;  
+            @include fontStyle( #454545, 24px, 24px);   
+        }
+        p{
+            padding-bottom: 65px;
+            height: 95px;
+            overflow: hidden;
+        }
+    }
+}
+@media (max-width: 320px){
+    .current_information_wrapper {
+        display: none;
+    } 
+}
